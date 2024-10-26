@@ -1,8 +1,8 @@
-from praytimes import PrayTimes
+from praytimes import PrayTimes # type: ignore
 import time
 from datetime import date, timedelta, datetime
 import pandas as pd
-from ics import Calendar, Event
+from ics import Calendar, Event # type: ignore
 
 # Initialize PrayTimes object with the desired calculation method
 PT = PrayTimes('Karachi')  # Available methods: MWL, ISNA, Egypt, Makkah, Karachi, Tehran, Jafri
@@ -10,7 +10,7 @@ PT = PrayTimes('Karachi')  # Available methods: MWL, ISNA, Egypt, Makkah, Karach
 # Adjust Asr calculation to Hanafi
 PT.adjust({'asr': 'Hanafi'})  # Available options: 'Hanafi', 'Standard'
 
-def get_prayer_times(start_date, end_date, latitude, longitude):
+def get_prayer_times(start_date, end_date, latitude, longitude) -> pd.DataFrame:
     """
     Calculates prayer times for a given date range and location.
 
